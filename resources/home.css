@@ -1,0 +1,5 @@
+#graphViewContainer {
+    -fx-hgap: 2;
+    -fx-vgap: 2;
+    -fx-background-color: #000;
+}

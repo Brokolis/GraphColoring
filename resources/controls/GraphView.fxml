@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import graphColoring.fx.controls.RadioToggleButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<fx:root type="BorderPane" xmlns:fx="http://javafx.com/fxml" stylesheets="@GraphView.css">
+    <top>
+        <FlowPane fx:id="toolbar">
+            <HBox>
+                <Button text="Clear" onAction="#clickClear"/>
+                <ToggleButton fx:id="simulationBtn" text="Simulation" selected="true" onAction="#clickSimulation"/>
+                <ToggleButton fx:id="showFpsBtn" text="Show FPS" selected="false"/>
+            </HBox>
+
+            <HBox>
+                <Separator/>
+
+                <fx:define>
+                    <ToggleGroup fx:id="modeGroup"/>
+                </fx:define>
+                <Text text="Mode:"/>
+                <RadioToggleButton text="Select" userData="select" toggleGroup="$modeGroup" selected="true"/>
+                <RadioToggleButton text="Edit nodes" userData="editNodes" toggleGroup="$modeGroup"/>
+                <RadioToggleButton text="Edit edges" userData="editEdges" toggleGroup="$modeGroup"/>
+            </HBox>
+
+            <HBox>
+                <Separator/>
+
+                <TextField fx:id="numberOfNodesTxt" promptText="# of nodes"/>
+                <TextField fx:id="numberOfNeighborsTxt" promptText="# of neighbors"/>
+                <Button text="Generate" onAction="#clickGenerate"/>
+            </HBox>
+        </FlowPane>
+    </top>
+    <center>
+        <Pane fx:id="canvas"/>
+    </center>
+    <bottom>
+        <BorderPane fx:id="footer">
+            <left>
+                <HBox visible="${showFpsBtn.selected}">
+                    <Text text="FPS: "/>
+                    <Text fx:id="fpsText" text="0"/>
+                </HBox>
+            </left>
+            <right>
+                <HBox fx:id="footerTextContainer">
+                    <HBox>
+                        <Text text="Edges: "/>
+                        <Text fx:id="edgesText" text="0"/>
+                    </HBox>
+
+                    <HBox>
+                        <Text text="Nodes: "/>
+                        <Text fx:id="nodesText" text="0"/>
+                    </HBox>
+                </HBox>
+            </right>
+        </BorderPane>
+    </bottom>
+</fx:root>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import graphColoring.fx.controls.NumberGraphView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="graphColoring.fx.Home"
+            stylesheets="@home.css">
+    <top>
+        <MenuBar>
+            <Menu text="Views">
+                <fx:define>
+                    <ToggleGroup fx:id="menuViewGroup"/>
+                </fx:define>
+                <RadioMenuItem text="1 view" toggleGroup="$menuViewGroup" userData="1" selected="true"/>
+                <RadioMenuItem text="2 view" toggleGroup="$menuViewGroup" userData="2"/>
+                <RadioMenuItem text="4 view" toggleGroup="$menuViewGroup" userData="4"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <fx:define>
+            <NumberGraphView fx:id="view00" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <NumberGraphView fx:id="view01" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <NumberGraphView fx:id="view10" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <NumberGraphView fx:id="view11" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </fx:define>
+        <GridPane fx:id="graphViewContainer" />
+    </center>
+</BorderPane>

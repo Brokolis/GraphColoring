@@ -1,0 +1,33 @@
+#toolbar {
+    -fx-background-color: #dadada;
+    -fx-padding: 5;
+    -fx-vgap: 5;
+}
+
+#toolbar > HBox {
+    -fx-spacing: 5;
+    -fx-padding: 0 5;
+    -fx-alignment: center;
+}
+
+#toolbar > HBox > Separator {
+    -fx-orientation: vertical;
+}
+
+#canvas {
+    -fx-background-color: #fff;
+}
+
+#footer {
+    -fx-background-color: #dadada;
+    -fx-padding: 5;
+    -fx-pref-height: 30;
+}
+
+#footer > * {
+    -fx-alignment: center;
+}
+
+#footerTextContainer {
+    -fx-spacing: 5;
+}
